@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+
+  lgfr:
+    hostname: lgfr
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    tty: true
+    stdin_open: true
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - ..:/home/user/lgfr
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+    privileged: true
