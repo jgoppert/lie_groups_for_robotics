@@ -3,6 +3,7 @@ version: "3.9"
 services:
 
   lgfr:
+    image: jgoppert/lie_groups_for_robotics
     hostname: lgfr
     build:
       context: ..
