@@ -8,6 +8,9 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
 	build-essential \
 	curl \
 	git \
+	texlive-latex-extra \
+	texlive-bibtex-extra \
+	latexmk \
 	python3-pip \
 	python3-setuptools \
 	python3-venv \

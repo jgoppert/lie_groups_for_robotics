@@ -11,7 +11,7 @@ ENV NB_UID ${NB_UID}
 ENV HOME /home/${NB_USER}
 
 # copy in cleaning script
-COPY .devcontainer/docker_clean.sh /docker_clean.sh
+COPY docker/docker_clean.sh /docker_clean.sh
 RUN chmod +x /docker_clean.sh
 
 # install base packages
@@ -34,7 +34,7 @@ RUN adduser --disabled-password \
 USER ${NB_USER}
 
 # install scripts
-COPY .devcontainer/install.sh /tmp/install.sh
+COPY docker/install.sh /tmp/install.sh
 COPY requirements.txt /tmp
 RUN /tmp/install.sh && /docker_clean.sh
 
@@ -44,7 +44,7 @@ RUN mkdir -p /home/user/.bash_completion.d && \
 
 # enable entrypoint
 ENV PATH="$HOME/bin:$PATH"
-COPY .devcontainer/entrypoint.sh /
+COPY docker/entrypoint.sh /
 RUN sudo chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["bash"]

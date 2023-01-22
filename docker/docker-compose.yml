@@ -7,7 +7,7 @@ services:
     hostname: lgfr
     build:
       context: ..
-      dockerfile: .devcontainer/Dockerfile
+      dockerfile: docker/Dockerfile
     tty: true
     stdin_open: true
     environment:

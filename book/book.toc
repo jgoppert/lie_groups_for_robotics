@@ -1,0 +1,6 @@
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}What is a Lie Group}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Applications of Lie Groups}{5}{section.1.2}%
+\contentsline {chapter}{\numberline {2}The $SO(2)$ Lie Group}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Group Representation}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Lie Algebra}{8}{section.2.2}%

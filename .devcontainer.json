@@ -7,7 +7,7 @@
 	// Update the 'dockerComposeFile' list if you have more compose files or use different names.
 	// The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
 	"dockerComposeFile": [
-		"./docker-compose.yml"
+		"docker/docker-compose.yml"
 	],
 
 	// The 'service' property is the name of the service for the container that VS Code should
@@ -39,14 +39,8 @@
 		  // Add the IDs of extensions you want installed when the container is created.
 		  "extensions": [
 			"ms-azuretools.vscode-docker",
-			"ms-vscode.cpptools",
-			"ms-vscode.cmake-tools",
-			"ms-vscode.cpptools-extension-pack",
-			"ms-vscode.cpptools-themes",
-			"trond-snekvik.devicetree",
-			"trond-snekvik.kconfig-lang",
 			"ms-python.python",
-			"eamodio.gitlens"
+			"james-yu.latex-workshop"
 			]
 		}
 	  }
