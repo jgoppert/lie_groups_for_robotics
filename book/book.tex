@@ -184,4 +184,40 @@ $$\begin{bmatrix}
 \end{bmatrix}^{\vee} = \omega$$
 \end{definition}
 
+
+\begin{definition}[The Lie Group Exponential Map]
+The Lie group Exponential map maps from the Lie algebra to the Lie group.
+For matrix Lie groups, such as $SO(2)$ it is given by the matrix
+exponential.
+\end{definition}
+
+\begin{definition}[The Lie Group Logarithm Map]
+The Lie group logarithm map maps from the Lie group to the Lie algebra.
+For matrix Lie groups, such as $SO(2)$ it is given by the matrix
+logarithm, the inverse of the matrix exponential.
+\end{definition}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=\textwidth]{SO2_so2_vector_field}
+    \caption{Transformation of a Vector Field from the Lie Group to the Lie Algebra}
+\end{figure}
+
+\begin{definition}[Bijective/Invertible Map]
+A map is bijective or invertible if it is:
+\begin{itemize}
+    \item One-one/ injective: For each point in the domain there is one point in the range.
+    \item Onto/ surjective: Each point in the range is mapped to by a point in the domain.
+\end{itemize}
+\end{definition}
+
+It is often beneficial for us to map vector fields to the Lie algebra to simplify
+analysis. If we do this, we desire an invertible map, so after we take the logarithm,
+we can then take the exponential of the Lie algebra to obtain results in the Lie group.
+We will see later how this can be used for reachable set computation. It is important
+to note that the matrix exponential is not one to one. A single point in the range, can be
+reached by multiple points in the domain, since for $so(2)$, the Lie algebra parameter $\theta$ 
+and $\theta + 2\pi k$, $k\in \mathbb{Z}$, map to the same point. However, we can restrict the
+comain of the map to $\{-\pi, \pi\}$ and the map is invertible in this domain.
+
 \end{document}
