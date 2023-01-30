@@ -220,4 +220,61 @@ reached by multiple points in the domain, since for $so(2)$, the Lie algebra par
 and $\theta + 2\pi k$, $k\in \mathbb{Z}$, map to the same point. However, we can restrict the
 comain of the map to $\{-\pi, \pi\}$ and the map is invertible in this domain.
 
+\subsection*{Vector Fields}
+
+On a Lie group, a vector field can be represented by an element of the Lie algebra. This element
+can then be pushed forward to other group elements, and defining the derivative of the Lie group
+element at that point.
+
+There are two types of vector fields that may be defined.
+
+\begin{definition}[Left Invariant Vector Fields]
+A vector field is left invariant, if multiplying on the left by an element of the
+group does not modify the vector field. Define a group element $G_t$ as the product of a constant group element $A$, and a time
+varying group element $B_t$, $G_t = A B_t$. Here we use the notation that
+ $A_t$ indicates that $A$ is a function of time. Then:
+
+$$\dot{B_t} = B_t [\omega]^{\wedge} \implies \dot{G_t} = G_t [\omega]^{\wedge} $$
+
+$$\dot{G_t} = \dfrac{d}{dt} \left(A B_t \right) = A B_t [\omega]^{\wedge} = G_t [\omega]^{\wedge} $$
+\end{definition}
+
+\begin{definition}[Right Invariant Vector Fields]
+A vector field is right invariant, if multiplying on the right by an element of the
+group does not modify the vector field. Define a group element $G_t$ as the product of a time
+varying group element $A_t$, and a constant group element $B$, $G_t = A_t B$.
+
+$$\dot{A_t} = [\omega]^{\wedge} A_t  \implies \dot{G_t} = [\omega]^{\wedge} G_t$$
+
+$$\dot{G_t} = \dfrac{d}{dt} \left(A_t B \right) = [\omega]^{\wedge}  A_t B = [\omega]^{\wedge} G_t$$
+\end{definition}
+
+\begin{definition}[Combing a Vector Field]
+A vector field may be combed by a Lie algebra element, if one Lie algebra element can 
+define a vector field on the group without a singularity.
+\end{definition}
+
+\subsection*{The Adjoint Map $Ad$, and $ad$}
+
+The Adjoint map maps element from the Lie algebra from one tangent space to another.
+
+$$\dot{G_t} = G_t [\omega_l]^{\wedge} = [\omega_r]^{\wedge} G_t $$
+
+$$\dot{G_t} = G_t [\omega_l]^{\wedge} G_t^{-1} = [\omega_r]^{\wedge}$$
+
+
+\section*{Exercises}
+
+\begin{enumerate}
+    \item Prove that $SO2$ is a group.
+    \item By hand, take the matrix exponential of the Lie algebra of $se(2)$ and show that it
+      maps to the Lie group $SO2$.
+    \item Which vector fields of $so(2)$ can comb $SO(2)$? Is there a vector-field as a
+      function of $\theta$, defined in $so(2)$ that does not comb $SO(2)$.
+    \item Write a class in python that represents the group $SO(2)$ and the Lie algebra $so(2)$.
+      It should implement the group product, neutral element, inverse, exponential map,
+      and the logarithm map. Use this class to programmatically find $log(exp^\wedge(\theta_1)exp^\wedge(\theta_2))$.
+      Evaluate this for $\theta_1=1$ and $\theta_2=2$.  Here $G(\theta)$ indicates the group element with parameter $\theta$.
+\end{enumerate}
+
 \end{document}
