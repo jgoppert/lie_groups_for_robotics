@@ -5,7 +5,9 @@
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{cleveref}
 \newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
 
 
 \graphicspath{{./fig/}}
@@ -102,7 +104,7 @@ The can be thought of as groups of continuous transformations.
 \end{itemize}
 
 
-\chapter{The $SO(2)$ Lie Group}
+\chapter{The SO(2) Lie Group}
 %
 \section{Group Representation}
 %
@@ -151,6 +153,13 @@ and we can perform calculus.
 
 \section{Lie Algebra}
 %
+An algebra is a set with associated operators for addition/subtraction, multiplication/division.
+$\mathcal{R}^3$, the space of 3-dimensions vectors forms an algebra. We are familiar with the cross product and vector addition.
+Vector addition acts as the addition/subtraction operator and the cross product acts as the multiplication/division operator.
+
+The associated Lie algebra of a Lie group is a linear vector space and already is closed under the addition and subtract operator.
+The Lie bracket \cref{def:lie_bracket}, which we will study soon, acts as the multiplication/division operator.
+%
 For matrix Lie groups, we can always find an element of the Lie Algebra, $\Omega$ via:
 %
 $$\dot{G} = G\Omega$$
@@ -184,6 +193,7 @@ $$\begin{bmatrix}
 \end{bmatrix}^{\vee} = \omega$$
 \end{definition}
 
+\section{The Exponential Map}
 
 \begin{definition}[The Lie Group Exponential Map]
 The Lie group Exponential map maps from the Lie algebra to the Lie group.
@@ -220,7 +230,7 @@ reached by multiple points in the domain, since for $so(2)$, the Lie algebra par
 and $\theta + 2\pi k$, $k\in \mathbb{Z}$, map to the same point. However, we can restrict the
 comain of the map to $\{-\pi, \pi\}$ and the map is invertible in this domain.
 
-\subsection*{Vector Fields}
+\section{Vector Fields}
 
 On a Lie group, a vector field can be represented by an element of the Lie algebra. This element
 can then be pushed forward to other group elements, and defining the derivative of the Lie group
@@ -254,14 +264,52 @@ A vector field may be combed by a Lie algebra element, if one Lie algebra elemen
 define a vector field on the group without a singularity.
 \end{definition}
 
-\subsection*{The Adjoint Map $Ad$, and $ad$}
+\section{The Lie bracket and Adjoint operators, Ad and ad}
 
 The Adjoint map maps element from the Lie algebra from one tangent space to another.
 
 $$\dot{G_t} = G_t [\omega_l]^{\wedge} = [\omega_r]^{\wedge} G_t $$
 
-$$\dot{G_t} = G_t [\omega_l]^{\wedge} G_t^{-1} = [\omega_r]^{\wedge}$$
+$$\dot{G_t}  G_t^{-1}  = G_t [\omega_l]^{\wedge} G_t^{-1} = [\omega_r]^{\wedge}$$
 
+$$[\omega_r]^{\wedge} = G_t [\omega_l]^{\wedge} G_t^{-1}$$
+
+
+\begin{definition}[$Ad$ operator]
+The Adjoint operator maps a Lie algebra element $[\omega]^{\wedge}$
+at the origin(e), to the tangent at $G_t$ is given by:
+$$g \mapsto g$$ where g is an element of the Lie algebra
+$$Ad_{G_t}[\omega]^{\wedge} \equiv G_t [\omega]^{\wedge} G_t^{-1}$$
+\label{def:Ad}
+\end{definition}
+%
+\begin{theorem} [Linearity of $Ad_G$ operator]
+$Ad_G$ is a linear operator on the Lie algebra for any Lie Group (it can be represented as a matrix)
+when the components of $\omega$ are expressed as a vector in $\mathcal{R}^n$, where n is the dimension
+of the Lie algebra.
+$$\mathcal{R}^n \mapsto \mathcal{R}^n$$ where n is the dimension of the Lie alegbra.
+$$Ad_G \omega_1 = \omega_2$$
+\label{thm:lin_Ad}
+\end{theorem}
+%
+The use of the linear operator (matrix) form of Ad, as defined in \cref{thm:lin_Ad} will
+be implied when multiplying a vector (e.g.  $(\omega_2 = Ad_{G_t} \omega_1$). The use of the
+operator as defined in \cref{def:Ad} in will be implied when multiplying by an element of the Lie algebra,
+(e.g. $Ad_{G_t}\left([\omega]^{\wedge}\right)$)
+
+%TODO, show proof
+The $ad$ operator is derived by taking the derivative of the $Ad$ operator at the origin.
+%
+\begin{definition}[$ad_x y$ operator]
+$$ad_{[\omega_1]^{\wedge}} [\omega_2]^{\wedge} \equiv [\omega_1]^{\wedge} [\omega_2]^{\wedge} - [\omega_2]^{\wedge} [\omega_1]^{\wedge}$$
+\end{definition}
+%
+\begin{definition}[Lie bracket operator]
+The Lie bracket is a binary operator, denoted by $\left[ \cdot , \cdot \right]$,  that acts as the multiplication operator for Lie algebras. It is equivalent to the ad operator.
+$$\left[[\omega_1]^{\wedge}, [\omega_2]^{\wedge}\right] \equiv ad_{[\omega_1]^{\wedge}} [\omega_2]^{\wedge} \equiv [\omega_1]^{\wedge} [\omega_2]^{\wedge} - [\omega_2]^{\wedge} [\omega_1]^{\wedge}$$
+\label{def:lie_bracket}
+\end{definition}
+%
 
 \section*{Exercises}
 
